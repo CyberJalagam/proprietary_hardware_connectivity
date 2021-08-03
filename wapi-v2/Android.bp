@@ -1,0 +1,36 @@
+cc_prebuilt_library_shared {
+    name: "libwapi",
+    owner: "mtk",
+	proprietary:true,
+    arch: {
+        arm: {
+            srcs: ["lib/libwapi.so"],
+        },
+        arm64: {
+            srcs: ["lib64/libwapi.so"],
+        },
+    },
+    compile_multilib: "both",
+    export_include_dirs: ["."],
+    strip: {
+        none: true,
+    },
+}
+
+cc_prebuilt_library_static {
+    name: "libwapi_cert",
+    owner: "mtk",
+    arch: {
+        arm: {
+            srcs: ["lib/libwapi_cert.a"],
+        },
+        arm64: {
+            srcs: ["lib64/libwapi_cert.a"],
+        },
+    },
+    compile_multilib: "both",
+    export_include_dirs: ["."],
+    strip: {
+        none: true,
+    },
+}
